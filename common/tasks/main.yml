@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: MIT-0
+---
+# tasks file for common
+- name: Set timezone to Europe/Moscow
+  timezone:
+    name: Europe/Moscow
