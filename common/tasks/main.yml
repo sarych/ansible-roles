@@ -14,6 +14,15 @@
     update_cache: true
   become: true
 
+- name: Install required packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  loop:
+    - "{{ packages }}"
+  become: true
+
 - name: Manage swap file
   block:
     - name: Create a swap file

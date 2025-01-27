@@ -5,3 +5,26 @@ swap_size: 1G
 region: Europe
 city: Moscow
 swapfile: /swapfile
+packages:
+  - git
+  - htop
+  - net-tools
+  - wget
+  - zip
+  - unzip
+  - telnet
+  - mc
+  - screen
+  - rsync
+  - psmisc
+  - strace
+  - atop
+  - sysstat
+  - iotop
+  - dstat
+  - lsof
+  - curl
+  - jq
+  - pv
+  - ncdu
+  - nethogs
