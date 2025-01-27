@@ -9,6 +9,11 @@
   ansible.builtin.hostname:
     name: "{{ inventory_hostname }}"
 
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+  become: true
+
 - name: Manage swap file
   block:
     - name: Create a swap file
