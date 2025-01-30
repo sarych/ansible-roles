@@ -7,18 +7,15 @@
       ansible.builtin.apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
-      become: true
 
     - name: Add Docker repository
       ansible.builtin.apt_repository:
         repo: 'deb [arch=arm64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
         state: present
-      become: true
 
     - name: Update apt cache
       ansible.builtin.apt:
         update_cache: true
-      become: true
 
     - name: Install Docker
       ansible.builtin.apt:
@@ -27,14 +24,13 @@
         update_cache: true
       loop:
         - "{{ docker_packages }}"
-      become: true
 
     - name: Start and enable Docker
       ansible.builtin.systemd:
         name: docker
         enabled: true
         state: started
-      become: true
+  become: true
 
 - name: Add user to docker group
   ansible.builtin.user:
